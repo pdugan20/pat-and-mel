@@ -26,7 +26,7 @@ class AccommodationPage extends React.PureComponent {
                     locations in Aurora and can be reserved by calling{' '}
                     <a href='tel:315-364-8888'>315-364-8888</a>. Please wait
                     until Monday, January 20 before calling to reserve your
-                    Accommodations.
+                    accommodations.
                 </span>
                 <HotelDescription>
                     The Aurora Inn
