@@ -65,10 +65,6 @@ const GlobalStyle = createGlobalStyle`
         background: ${colors.grayUltraLight};
         color: ${colors.blackText};
         font-family: ${typeface.sansSerif};
-
-        @media ${device.tablet} {
-            background: ${colors.white};
-        }
     }
 
     div, span {

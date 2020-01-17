@@ -1,9 +1,10 @@
 #nprogress {
     pointer-events: none;
+    display: none;
 }
 
 #nprogress .bar {
-    background: #fff;
+    background: #4B2E83;
     position: fixed;
     z-index: 1000;
     top: 0;

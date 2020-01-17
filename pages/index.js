@@ -1,7 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import Link from 'next/link';
 import Page from '../layouts/main';
 import HeroImage from '../components/HeroImage';
+import { RootView, StyledDescription } from '../styles/page';
+import { LinkContainer, GlobalLink } from '../styles/links';
 
 class HomePage extends React.PureComponent {
     constructor(props) {
@@ -18,9 +20,9 @@ class HomePage extends React.PureComponent {
     renderDescription = () => {
         return (
             <StyledDescription>
-                Melanie and I are so excited to invite you to join us for
-                wedding which will take place at 5:00PM on Saturday, June 2020
-                June 2020 at the{' '}
+                Melanie and I are so excited to invite you to join us for our
+                wedding which will take place at 5:00PM on Saturday, June 13,
+                2020 at the{' '}
                 <a
                     target='_blank'
                     rel='noopener noreferrer'
@@ -33,11 +35,28 @@ class HomePage extends React.PureComponent {
         );
     };
 
+    renderLinkGroup = () => {
+        return (
+            <LinkContainer>
+                <Link href='/accomodations'>
+                    <GlobalLink href='/accomodations'>
+                        Accomodations & Travel
+                    </GlobalLink>
+                </Link>
+                ·
+                <Link href='/schedule'>
+                    <GlobalLink href='/schedule'>Schedule</GlobalLink>
+                </Link>
+            </LinkContainer>
+        );
+    };
+
     renderMainColumn = () => {
         return (
             <RootView>
                 {this.renderHeroImage()}
                 {this.renderDescription()}
+                {this.renderLinkGroup()}
             </RootView>
         );
     };
@@ -56,27 +75,3 @@ class HomePage extends React.PureComponent {
 }
 
 export default HomePage;
-
-const RootView = styled.div`
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    margin: 0 auto;
-
-    img {
-        margin: 0 auto;
-    }
-`;
-
-const StyledDescription = styled.div`
-    max-width: 450px;
-    text-align: center;
-    margin: 24px auto 28px auto;
-    line-height: 1.3;
-
-    a {
-        color: #333;
-    }
-`;
