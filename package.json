@@ -1,0 +1,54 @@
+{
+  "name": "pat-and-mel",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pdugan20/pat-and-mel.git"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "export": "next export"
+  },
+  "engines": {
+    "node": "12.12.0",
+    "npm": "6.13.2"
+  },
+  "dependencies": {
+    "@firebase/app": "^0.5.1",
+    "@firebase/firestore": "^1.9.2",
+    "@firebase/storage": "^0.3.23",
+    "@react-google-maps/api": "^1.8.1",
+    "@types/googlemaps": "^3.39.1",
+    "@types/markerclustererplus": "^2.1.33",
+    "@types/react": "^16.9.17",
+    "@zeit/next-css": "^1.0.1",
+    "firebase": "^7.6.2",
+    "next": "^9.1.7",
+    "nprogress": "^0.2.0",
+    "prismic-javascript": "^2.1.5",
+    "prismic-reactjs": "^1.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-images": "^1.0.0",
+    "react-is": "^16.12.0",
+    "styled-components": "^5.0.0",
+    "xhr2": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-styled-components": "^1.8.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "1.18.2",
+    "prop-types": "^15.7.2"
+  },
+  "license": "ISC"
+}
