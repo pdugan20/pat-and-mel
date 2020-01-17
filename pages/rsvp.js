@@ -11,32 +11,55 @@ class RsvpPage extends React.PureComponent {
         };
     }
 
-    renderMainColumn = (showGuestNameInput) => {
+    renderNameField = () => {
+        return <StyledInput type='text' name='name' placeholder='Your name' />;
+    };
+
+    renderAttendanceDropdown = () => {
+        return (
+            <StyledDropdown onChange={this.onChange}>
+                <option disabled selected>
+                    Will you be able to attend?
+                </option>
+                <option value='yes'>Yes, you bet your ass I will attend</option>
+                <option value='no'>No, I will not be able to attend</option>
+            </StyledDropdown>
+        );
+    };
+
+    renderGuestDropdown = () => {
+        return (
+            <StyledDropdown onChange={this.onGuestChange}>
+                <option disabled selected>
+                    Will you be bringing a guest?
+                </option>
+                <option value='yes'>Yes, I am bringing a guest</option>
+                <option value='no'>No, I will be flying solo</option>
+            </StyledDropdown>
+        );
+    };
+
+    renderGuestNameField = () => {
+        const { showGuestNameInput } = this.state;
+
+        return (
+            showGuestNameInput && (
+                <StyledInput
+                    type='text'
+                    name='guestName'
+                    placeholder="Your guest's name"
+                />
+            )
+        );
+    };
+
+    renderMainColumn = () => {
         return (
             <RootView>
-                <StyledDropdown onChange={this.onChange}>
-                    <option disabled selected>
-                        Will you be able to attend?
-                    </option>
-                    <option value='yes'>
-                        Yes, you bet your ass I will attend
-                    </option>
-                    <option value='no'>No, I will not be able to attend</option>
-                </StyledDropdown>
-                <StyledDropdown onChange={this.onGuestChange}>
-                    <option disabled selected>
-                        Will you be bringing a guest?
-                    </option>
-                    <option value='yes'>Yes, I am bringing a guest</option>
-                    <option value='no'>No, I will be flying solo</option>
-                </StyledDropdown>
-                {showGuestNameInput && (
-                    <StyledInput
-                        type='text'
-                        name='name'
-                        placeholder="Your guest's name"
-                    />
-                )}
+                {this.renderNameField()}
+                {this.renderAttendanceDropdown()}
+                {this.renderGuestDropdown()}
+                {this.renderGuestNameField()}
             </RootView>
         );
     };
