@@ -36,7 +36,7 @@ class SchedulePage extends React.PureComponent {
                     Sunday, June 14th.
                 </span>
                 <DateTitle>Saturday, June 13</DateTitle>
-                <HotelDescription>
+                <EventDescription>
                     5:00pm - Wedding Ceremony, The Aurora Inn,{' '}
                     <a
                         href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
@@ -45,8 +45,8 @@ class SchedulePage extends React.PureComponent {
                     >
                         391 Main St, Aurora, NY 13026
                     </a>
-                </HotelDescription>
-                <HotelDescription>
+                </EventDescription>
+                <EventDescription>
                     6:00pm - Reception, The Aurora Inn,{' '}
                     <a
                         href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
@@ -55,14 +55,14 @@ class SchedulePage extends React.PureComponent {
                     >
                         391 Main St, Aurora, NY 13026
                     </a>
-                </HotelDescription>
-                <HotelDescription>
+                </EventDescription>
+                <EventDescription>
                     11:00pm - Afterparty, Location to be announced
-                </HotelDescription>
+                </EventDescription>
                 <DateTitle>Sunday, June 14</DateTitle>
-                <HotelDescription>
+                <EventDescription>
                     Breakfast, Time & location to be announced
-                </HotelDescription>
+                </EventDescription>
             </ScheduleDescription>
         );
     };
@@ -124,7 +124,7 @@ const DateTitle = styled.div`
     font-size: ${spacing.md};
 `;
 
-const HotelDescription = styled.div`
+const EventDescription = styled.div`
     display: block;
     margin: ${spacing.xs} 0;
 `;
