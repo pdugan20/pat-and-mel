@@ -20,7 +20,7 @@ class HomePage extends React.PureComponent {
     renderDescription = () => {
         return (
             <StyledDescription>
-                Melanie and I are so excited to invite you to join us for our
+                Melanie and Pat are so excited to invite you to join us for our
                 wedding which will take place at 5:00PM on Saturday, June 13,
                 2020 at the{' '}
                 <a

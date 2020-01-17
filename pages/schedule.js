@@ -6,6 +6,9 @@ import { RootView, StyledDescription } from '../styles/page';
 import { SecondaryLinkContainer, GlobalLink } from '../styles/links';
 import { PrimaryHeading } from '../styles/headings';
 import { device } from '../constants/breakpoints';
+import spacing from '../constants/spacing';
+import { fontWeight } from '../constants/type';
+import { grid } from '../constants/dimensions';
 
 class SchedulePage extends React.PureComponent {
     constructor(props) {
@@ -106,22 +109,22 @@ export default SchedulePage;
 
 const ScheduleDescription = styled(StyledDescription)`
     text-align: left;
-    max-width: 600px;
-    margin-bottom: 16px;
+    max-width: ${grid.centerCol};
+    margin-bottom: ${spacing.md};
 
     @media ${device.tablet} {
-        margin: 0 0 16px 0;
+        margin: 0 0 ${spacing.md} 0;
     }
 `;
 
 const DateTitle = styled.div`
-    margin-top: 16px;
+    margin-top: ${spacing.md};
     text-decoration: underline;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: ${fontWeight.medium};
+    font-size: ${spacing.md};
 `;
 
 const HotelDescription = styled.div`
     display: block;
-    margin: 4px 0;
+    margin: ${spacing.xs} 0;
 `;

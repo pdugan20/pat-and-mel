@@ -6,6 +6,8 @@ import { RootView, StyledDescription } from '../styles/page';
 import { SecondaryLinkContainer, GlobalLink } from '../styles/links';
 import { PrimaryHeading } from '../styles/headings';
 import { device } from '../constants/breakpoints';
+import { grid } from '../constants/dimensions';
+import spacing from '../constants/spacing';
 
 class AccomodationPage extends React.PureComponent {
     constructor(props) {
@@ -97,14 +99,14 @@ export default AccomodationPage;
 
 const AccomodationDescription = styled(StyledDescription)`
     text-align: left;
-    max-width: 600px;
-    margin-bottom: 16px;
+    max-width: ${grid.centerCol};
+    margin-bottom: ${spacing.md};
 
     @media ${device.tablet} {
-        margin: 0 0 16px 0;
+        margin: 0 0 ${spacing.md} 0;
     }
 `;
 
 const HotelDescription = styled.div`
-    margin-top: 16px;
+    margin-top: ${spacing.md};
 `;
