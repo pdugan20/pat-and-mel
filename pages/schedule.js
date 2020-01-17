@@ -20,10 +20,17 @@ class SchedulePage extends React.PureComponent {
             <ScheduleDescription>
                 <PrimaryHeading>Schedule</PrimaryHeading>
                 <span>
-                    The wedding ceremony and reception will take place at the
-                    Aurora Inn on the evening of Saturday June 13th and there
-                    will be a breakfast at a yet to be determined location the
-                    morning of Sunday, June 14th.
+                    The wedding ceremony and reception will take place at the{' '}
+                    <a
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href='https://innsofaurora.com/'
+                    >
+                        Aurora Inn
+                    </a>{' '}
+                    on the evening of Saturday, June 13th and there will be a
+                    breakfast at a yet to be determined location the morning of
+                    Sunday, June 14th.
                 </span>
                 <DateTitle>Saturday, June 13</DateTitle>
                 <HotelDescription>
