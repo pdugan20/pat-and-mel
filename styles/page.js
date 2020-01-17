@@ -30,7 +30,7 @@ export const RootView = styled.div`
 export const StyledDescription = styled.div`
     max-width: 450px;
     text-align: center;
-    margin: 24px auto 28px auto;
+    margin: 24px auto 24px auto;
     line-height: ${lineHeight.lh_13};
     padding: 0 ${spacing.lg};
 
