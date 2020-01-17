@@ -9,24 +9,24 @@ import { device } from '../constants/breakpoints';
 import { grid } from '../constants/dimensions';
 import spacing from '../constants/spacing';
 
-class AccomodationPage extends React.PureComponent {
+class AccommodationPage extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            title: 'Accomodations & Travel',
+            title: 'Accommodations & Travel',
         };
     }
 
     renderDescription = () => {
         return (
-            <AccomodationDescription>
-                <PrimaryHeading>Accomodations & Travel</PrimaryHeading>
+            <AccommodationDescription>
+                <PrimaryHeading>Accommodations & Travel</PrimaryHeading>
                 <span>
                     Reserved room blocks will be available at the following
                     locations in Aurora and can be reserved by calling{' '}
                     <a href='tel:315-364-8888'>315-364-8888</a>. Please wait
                     until Monday, January 20 before calling to reserve your
-                    accomodations.
+                    Accommodations.
                 </span>
                 <HotelDescription>
                     The Aurora Inn
@@ -55,7 +55,7 @@ class AccomodationPage extends React.PureComponent {
                     The airports nearest to Aurora are Ithaca (ITH) and Syracuse
                     (SYR).
                 </span>
-            </AccomodationDescription>
+            </AccommodationDescription>
         );
     };
 
@@ -95,9 +95,9 @@ class AccomodationPage extends React.PureComponent {
     }
 }
 
-export default AccomodationPage;
+export default AccommodationPage;
 
-const AccomodationDescription = styled(StyledDescription)`
+const AccommodationDescription = styled(StyledDescription)`
     text-align: left;
     max-width: ${grid.centerCol};
     margin-bottom: ${spacing.md};

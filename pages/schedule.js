@@ -74,9 +74,9 @@ class SchedulePage extends React.PureComponent {
                     <GlobalLink href='/'>Home</GlobalLink>
                 </Link>
                 ·
-                <Link href='/accomodations'>
-                    <GlobalLink href='/accomodations'>
-                        Accomodations & Travel
+                <Link href='/accommodations'>
+                    <GlobalLink href='/accommodations'>
+                        Accommodations & Travel
                     </GlobalLink>
                 </Link>
             </SecondaryLinkContainer>

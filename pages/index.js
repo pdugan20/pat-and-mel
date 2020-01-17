@@ -38,9 +38,9 @@ class HomePage extends React.PureComponent {
     renderLinkGroup = () => {
         return (
             <LinkContainer>
-                <Link href='/accomodations'>
-                    <GlobalLink href='/accomodations'>
-                        Accomodations & Travel
+                <Link href='/accommodations'>
+                    <GlobalLink href='/accommodations'>
+                        Accommodations & Travel
                     </GlobalLink>
                 </Link>
                 ·
