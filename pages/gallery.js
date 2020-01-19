@@ -6,6 +6,8 @@ import Page from '../layouts/main';
 import { RootView } from '../styles/page';
 import { photos } from '../constants/photos';
 
+const modalBackgroundColor = 'rgba(0,0,0,0.9)';
+
 class GalleryPage extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -41,7 +43,16 @@ class GalleryPage extends React.PureComponent {
         return (
             <ModalGateway>
                 {viewerIsOpen ? (
-                    <Modal onClose={this.closeLightbox}>
+                    <Modal
+                        onClose={this.closeLightbox}
+                        allowFullscreen={false}
+                        styles={{
+                            blanket: (base) => ({
+                                ...base,
+                                backgroundColor: modalBackgroundColor,
+                            }),
+                        }}
+                    >
                         <Carousel
                             currentIndex={currentImage}
                             views={photos.map((x) => ({
@@ -49,6 +60,9 @@ class GalleryPage extends React.PureComponent {
                                 srcset: x.srcSet,
                                 caption: x.title,
                             }))}
+                            components={{
+                                FooterCount: () => null,
+                            }}
                         />
                     </Modal>
                 ) : null}
