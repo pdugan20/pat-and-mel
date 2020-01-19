@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Gallery from 'react-photo-gallery';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import Page from '../layouts/main';
 import { RootView } from '../styles/page';
 import { photos } from '../constants/photos';
@@ -8,17 +9,60 @@ import { photos } from '../constants/photos';
 class GalleryPage extends React.PureComponent {
     constructor(props) {
         super(props);
+
         this.state = {
             title: 'Photo Gallery',
+            currentImage: 0,
+            viewerIsOpen: false,
         };
     }
 
+    openLightbox = (event, { index }) => {
+        this.setState({
+            currentImage: index,
+            viewerIsOpen: true,
+        });
+    };
+
+    closeLightbox = () => {
+        this.setState({
+            currentImage: 0,
+            viewerIsOpen: false,
+        });
+    };
+
     renderGallery = () => {
-        return <Gallery photos={photos} />;
+        return <Gallery photos={photos} onClick={this.openLightbox} />;
+    };
+
+    renderLightBox = () => {
+        const { viewerIsOpen, currentImage } = this.state;
+
+        return (
+            <ModalGateway>
+                {viewerIsOpen ? (
+                    <Modal onClose={this.closeLightbox}>
+                        <Carousel
+                            currentIndex={currentImage}
+                            views={photos.map((x) => ({
+                                ...x,
+                                srcset: x.srcSet,
+                                caption: x.title,
+                            }))}
+                        />
+                    </Modal>
+                ) : null}
+            </ModalGateway>
+        );
     };
 
     renderMainColumn = () => {
-        return <GalleryRootView>{this.renderGallery()}</GalleryRootView>;
+        return (
+            <GalleryRootView>
+                {this.renderGallery()}
+                {this.renderLightBox()}
+            </GalleryRootView>
+        );
     };
 
     render() {
