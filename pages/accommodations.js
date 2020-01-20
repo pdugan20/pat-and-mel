@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Page from '../layouts/main';
 import { RootView, StyledDescription } from '../styles/page';
 import { SecondaryLinkContainer, GlobalLink } from '../styles/links';
+import AuroraMap from '../components/Map';
 import { PrimaryHeading } from '../styles/headings';
 import { device } from '../constants/breakpoints';
 import { grid } from '../constants/dimensions';
@@ -50,6 +51,7 @@ class AccommodationPage extends React.PureComponent {
                         38 Lafayette St, Aurora, NY 13026
                     </a>
                 </HotelDescription>
+                <AuroraMap />
                 <span>
                     <br />
                     The airports nearest to Aurora are Ithaca (ITH) and Syracuse
