@@ -22,6 +22,8 @@ export const SecondaryLinkContainer = styled.div`
     text-align: left;
     margin: 0 auto;
     color: ${colors.gray};
+    border-top: 1px solid ${colors.grayLight};
+    padding-top: 8px;
 
     a {
         &:first-child {

@@ -1,9 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
 import Page from '../layouts/main';
 import HeroImage from '../components/HeroImage';
 import { RootView, StyledDescription } from '../styles/page';
-import { LinkContainer, GlobalLink } from '../styles/links';
+import Navigation from '../components/page/Navigation';
 
 class HomePage extends React.PureComponent {
     constructor(props) {
@@ -36,19 +35,7 @@ class HomePage extends React.PureComponent {
     };
 
     renderLinkGroup = () => {
-        return (
-            <LinkContainer>
-                <Link href='/accommodations'>
-                    <GlobalLink href='/accommodations'>
-                        Accommodations & Travel
-                    </GlobalLink>
-                </Link>
-                ·
-                <Link href='/schedule'>
-                    <GlobalLink href='/schedule'>Schedule</GlobalLink>
-                </Link>
-            </LinkContainer>
-        );
+        return <Navigation />;
     };
 
     renderMainColumn = () => {

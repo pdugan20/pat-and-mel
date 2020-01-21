@@ -1,9 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import Page from '../layouts/main';
+import Navigation from '../components/page/Navigation';
 import { RootView, StyledDescription } from '../styles/page';
-import { SecondaryLinkContainer, GlobalLink } from '../styles/links';
 import AuroraMap from '../components/Map';
 import { PrimaryHeading } from '../styles/headings';
 import { device } from '../constants/breakpoints';
@@ -62,17 +61,7 @@ class AccommodationPage extends React.PureComponent {
     };
 
     renderLinkGroup = () => {
-        return (
-            <SecondaryLinkContainer>
-                <Link href='/'>
-                    <GlobalLink href='/'>Home</GlobalLink>
-                </Link>
-                ·
-                <Link href='/schedule'>
-                    <GlobalLink href='/schedule'>Schedule</GlobalLink>
-                </Link>
-            </SecondaryLinkContainer>
-        );
+        return <Navigation />;
     };
 
     renderMainColumn = () => {

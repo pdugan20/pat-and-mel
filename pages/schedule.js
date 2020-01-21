@@ -1,14 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import Page from '../layouts/main';
 import { RootView, StyledDescription } from '../styles/page';
-import { SecondaryLinkContainer, GlobalLink } from '../styles/links';
 import { PrimaryHeading } from '../styles/headings';
 import { device } from '../constants/breakpoints';
 import spacing from '../constants/spacing';
 import { fontWeight } from '../constants/type';
 import { grid } from '../constants/dimensions';
+import Navigation from '../components/page/Navigation';
 
 class SchedulePage extends React.PureComponent {
     constructor(props) {
@@ -68,19 +67,7 @@ class SchedulePage extends React.PureComponent {
     };
 
     renderLinkGroup = () => {
-        return (
-            <SecondaryLinkContainer>
-                <Link href='/'>
-                    <GlobalLink href='/'>Home</GlobalLink>
-                </Link>
-                ·
-                <Link href='/accommodations'>
-                    <GlobalLink href='/accommodations'>
-                        Accommodations & Travel
-                    </GlobalLink>
-                </Link>
-            </SecondaryLinkContainer>
-        );
+        return <Navigation />;
     };
 
     renderMainColumn = () => {

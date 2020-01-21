@@ -1,7 +1,7 @@
 export default {
     blackText: '#333333',
     grayUltraLight: '#FAFAFA',
-    grayLight: '#E3E3E3',
+    grayLight: '#CECECE',
     gray: '#9E9E9E',
     grayMedium: '#7B7B7B',
     grayDark: '#5A5666',
