@@ -1,13 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-// import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { SecondaryLinkContainer, GlobalLink } from '../../styles/links';
+
+const propTypes = {
+    centered: PropTypes.bool,
+};
+
+const defaultProps = {
+    centered: false,
+};
 
 class Navigation extends React.PureComponent {
     render() {
+        const { centered } = this.props;
+
         return (
-            <SecondaryLinkContainer>
+            <SecondaryLinkContainer centered={centered}>
                 <Link href='/'>
                     <GlobalLink href='/'>Home</GlobalLink>
                 </Link>
@@ -29,5 +38,8 @@ class Navigation extends React.PureComponent {
         );
     }
 }
+
+Navigation.propTypes = propTypes;
+Navigation.defaultProps = defaultProps;
 
 export default Navigation;

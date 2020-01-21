@@ -5,6 +5,8 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import Page from '../layouts/main';
 import { RootView } from '../styles/page';
 import { photos } from '../constants/photos';
+import Navigation from '../components/page/Navigation';
+import { PrimaryHeading } from '../styles/headings';
 
 const modalBackgroundColor = 'rgba(0,0,0,0.9)';
 
@@ -34,7 +36,12 @@ class GalleryPage extends React.PureComponent {
     };
 
     renderGallery = () => {
-        return <Gallery photos={photos} onClick={this.openLightbox} />;
+        return (
+            <>
+                <PrimaryHeading>Photo Gallery</PrimaryHeading>
+                <Gallery photos={photos} onClick={this.openLightbox} />
+            </>
+        );
     };
 
     renderLightBox = () => {
@@ -75,8 +82,13 @@ class GalleryPage extends React.PureComponent {
             <GalleryRootView>
                 {this.renderGallery()}
                 {this.renderLightBox()}
+                {this.renderLinkGroup()}
             </GalleryRootView>
         );
+    };
+
+    renderLinkGroup = () => {
+        return <Navigation />;
     };
 
     render() {
@@ -86,6 +98,7 @@ class GalleryPage extends React.PureComponent {
             <Page
                 singleColumn
                 title={title}
+                desktopMaxWidth='1000px'
                 mainColumn={this.renderMainColumn()}
             />
         );
@@ -96,6 +109,7 @@ export default GalleryPage;
 
 const GalleryRootView = styled(RootView)`
     display: block;
-    margin: 32px;
     height: initial;
+    width: 100%;
+    text-align: left;
 `;

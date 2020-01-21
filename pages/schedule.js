@@ -3,10 +3,8 @@ import styled from 'styled-components';
 import Page from '../layouts/main';
 import { RootView, StyledDescription } from '../styles/page';
 import { PrimaryHeading } from '../styles/headings';
-import { device } from '../constants/breakpoints';
 import spacing from '../constants/spacing';
 import { fontWeight } from '../constants/type';
-import { grid } from '../constants/dimensions';
 import Navigation from '../components/page/Navigation';
 
 class SchedulePage extends React.PureComponent {
@@ -96,12 +94,6 @@ export default SchedulePage;
 
 const ScheduleDescription = styled(StyledDescription)`
     text-align: left;
-    max-width: ${grid.centerCol};
-    margin-bottom: ${spacing.md};
-
-    @media ${device.tablet} {
-        margin: 0 0 ${spacing.md} 0;
-    }
 `;
 
 const DateTitle = styled.div`

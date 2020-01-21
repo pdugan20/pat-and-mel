@@ -6,7 +6,9 @@ import spacing from '../constants/spacing';
 export const PrimaryHeading = styled.h1`
     font-size: ${fontSize.xl};
     font-weight: ${fontWeight.medium};
-    margin-bottom: ${spacing.sm};
+    margin-bottom: ${spacing.md};
+    border-bottom: 1px solid ${colors.grayLight};
+    padding-bottom: 6px;
 `;
 
 export const SecondaryHeading = styled.h2`

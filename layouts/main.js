@@ -5,7 +5,6 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import Header from '../components/page/Header';
 import { typeface, fontSize } from '../constants/type';
-import { grid } from '../constants/dimensions';
 import colors from '../constants/colors';
 import { device } from '../constants/breakpoints';
 
@@ -17,6 +16,11 @@ const columnType = [PropTypes.object, PropTypes.array];
 const propTypes = {
     mainColumn: PropTypes.oneOfType(columnType).isRequired,
     title: PropTypes.string.isRequired,
+    desktopMaxWidth: PropTypes.string,
+};
+
+const defaultProps = {
+    desktopMaxWidth: '700px',
 };
 
 class Page extends React.PureComponent {
@@ -41,14 +45,14 @@ class Page extends React.PureComponent {
     }
 
     render() {
-        const { mainColumn } = this.props;
+        const { mainColumn, desktopMaxWidth } = this.props;
         const { pageTitle } = this.state;
 
         return (
             <div>
                 <GlobalStyle />
                 <Header title={pageTitle} />
-                <ContentGrid>
+                <ContentGrid desktopMaxWidth={desktopMaxWidth}>
                     <MainColumn>{mainColumn}</MainColumn>
                 </ContentGrid>
             </div>
@@ -57,6 +61,7 @@ class Page extends React.PureComponent {
 }
 
 Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
 
 export default Page;
 
@@ -73,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const ContentGrid = styled.div`
-    max-width: ${grid.main};
+    max-width: ${(props) => props.desktopMaxWidth};
     margin: 0 auto;
     vertical-align: top;
     display: flex;

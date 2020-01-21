@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Page from '../layouts/main';
 import HeroImage from '../components/HeroImage';
 import { RootView, StyledDescription } from '../styles/page';
@@ -35,16 +36,16 @@ class HomePage extends React.PureComponent {
     };
 
     renderLinkGroup = () => {
-        return <Navigation />;
+        return <Navigation centered />;
     };
 
     renderMainColumn = () => {
         return (
-            <RootView>
+            <HomeRootView>
                 {this.renderHeroImage()}
                 {this.renderDescription()}
                 {this.renderLinkGroup()}
-            </RootView>
+            </HomeRootView>
         );
     };
 
@@ -62,3 +63,7 @@ class HomePage extends React.PureComponent {
 }
 
 export default HomePage;
+
+const HomeRootView = styled(RootView)`
+    height: 100vh;
+`;
