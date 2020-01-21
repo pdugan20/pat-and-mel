@@ -247,6 +247,12 @@ export const photos = [
     },
     {
         src:
+            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F44.jpg?alt=media&token=f910de74-3834-4465-a050-7fd8376c9f9c',
+        width: 1500,
+        height: 1941,
+    },
+    {
+        src:
             'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F42.jpg?alt=media&token=11318038-2542-40f5-917f-94790660a827',
         width: 1500,
         height: 1500,
@@ -256,12 +262,6 @@ export const photos = [
             'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F43.jpg?alt=media&token=39da9bf4-8059-4940-9a48-7e53a41e283f',
         width: 1500,
         height: 1884,
-    },
-    {
-        src:
-            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F44.jpg?alt=media&token=f910de74-3834-4465-a050-7fd8376c9f9c',
-        width: 1500,
-        height: 1941,
     },
     {
         src:
@@ -277,7 +277,7 @@ export const photos = [
     },
     {
         src:
-            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F48.jpg?alt=media&token=2695eec6-9215-41f7-aecc-3ede00a2a219',
+            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F48.jpg?alt=media&token=3faeb96e-ba0a-494e-965f-3c453ca6096b',
         width: 1616,
         height: 1080,
     },
