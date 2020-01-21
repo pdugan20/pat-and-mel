@@ -33,6 +33,7 @@ export const SecondaryLinkContainer = styled.div`
     margin-top: 16px;
     color: ${colors.gray};
     width: 100%;
+    line-height: 1.3;
     border-top: solid ${colors.grayLight};
     border-width: ${(props) => (props.centered ? '0' : '1px')};
     padding-top: ${(props) => (props.centered ? '4px' : '8px')};
