@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import colors from '../constants/colors';
-import spacing from '../constants/spacing';
 import { lineHeight } from '../constants/type';
 import { device } from '../constants/breakpoints';
 
@@ -9,12 +8,9 @@ export const RootView = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    margin: 0 auto;
-
-    img {
-        margin: 0 auto;
-    }
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
 
     a:hover {
         text-decoration: underline;
@@ -23,16 +19,11 @@ export const RootView = styled.div`
 
     @media ${device.tablet} {
         height: initial;
-        margin-top: ${spacing.lg};
     }
 `;
 
 export const StyledDescription = styled.div`
-    max-width: 450px;
-    text-align: center;
-    margin: 24px auto 24px auto;
     line-height: ${lineHeight.lh_13};
-    padding: 0 ${spacing.lg};
 
     a {
         color: ${colors.blackText};

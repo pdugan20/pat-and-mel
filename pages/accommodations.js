@@ -1,13 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import Page from '../layouts/main';
+import Navigation from '../components/page/Navigation';
 import { RootView, StyledDescription } from '../styles/page';
-import { SecondaryLinkContainer, GlobalLink } from '../styles/links';
 import AuroraMap from '../components/Map';
 import { PrimaryHeading } from '../styles/headings';
-import { device } from '../constants/breakpoints';
-import { grid } from '../constants/dimensions';
 import spacing from '../constants/spacing';
 
 class AccommodationPage extends React.PureComponent {
@@ -62,17 +59,7 @@ class AccommodationPage extends React.PureComponent {
     };
 
     renderLinkGroup = () => {
-        return (
-            <SecondaryLinkContainer>
-                <Link href='/'>
-                    <GlobalLink href='/'>Home</GlobalLink>
-                </Link>
-                ·
-                <Link href='/schedule'>
-                    <GlobalLink href='/schedule'>Schedule</GlobalLink>
-                </Link>
-            </SecondaryLinkContainer>
-        );
+        return <Navigation />;
     };
 
     renderMainColumn = () => {
@@ -101,12 +88,6 @@ export default AccommodationPage;
 
 const AccommodationDescription = styled(StyledDescription)`
     text-align: left;
-    max-width: ${grid.centerCol};
-    margin-bottom: ${spacing.md};
-
-    @media ${device.tablet} {
-        margin: 0 0 ${spacing.md} 0;
-    }
 `;
 
 const HotelDescription = styled.div`

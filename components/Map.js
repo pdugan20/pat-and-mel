@@ -85,7 +85,6 @@ const mapStyle = `
     margin-top: 24px;
 
     @media ${device.tablet} {
-        border-top: 3px solid ${colors.grayLight};
         height: 250px;
     }
 `;

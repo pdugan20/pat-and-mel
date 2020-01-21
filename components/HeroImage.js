@@ -17,6 +17,7 @@ export default HeroImage;
 
 const LakeImage = styled.img`
     width: 200px;
+    margin: 0 auto 16px auto;
 
     @media ${device.tablet} {
         width: 150px;
