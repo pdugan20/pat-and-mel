@@ -1,7 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { SecondaryLinkContainer, GlobalLink } from '../../styles/links';
+import {
+    SecondaryLinkContainer,
+    GlobalLink,
+    LinkContainer,
+} from '../../styles/links';
 
 const propTypes = {
     centered: PropTypes.bool,
@@ -11,29 +15,38 @@ const defaultProps = {
     centered: false,
 };
 
+const navLinks = [
+    {
+        text: 'Home',
+        link: '/',
+    },
+    {
+        text: 'Accommodations & Travel',
+        link: '/accommodations',
+    },
+    {
+        text: 'Gallery',
+        link: '/gallery',
+    },
+    {
+        text: 'Schedule',
+        link: '/schedule',
+    },
+];
+
 class Navigation extends React.PureComponent {
     render() {
         const { centered } = this.props;
 
         return (
             <SecondaryLinkContainer centered={centered}>
-                <Link href='/'>
-                    <GlobalLink href='/'>Home</GlobalLink>
-                </Link>
-                ·
-                <Link href='/accommodations'>
-                    <GlobalLink href='/accommodations'>
-                        Accommodations & Travel
-                    </GlobalLink>
-                </Link>
-                ·
-                <Link href='/gallery'>
-                    <GlobalLink href='/gallery'>Gallery</GlobalLink>
-                </Link>
-                ·
-                <Link href='/schedule'>
-                    <GlobalLink href='/schedule'>Schedule</GlobalLink>
-                </Link>
+                {navLinks.map(({ text, link }, index) => (
+                    <LinkContainer>
+                        <Link href={link} key={index}>
+                            <GlobalLink href={link}>{text}</GlobalLink>
+                        </Link>
+                    </LinkContainer>
+                ))}
             </SecondaryLinkContainer>
         );
     }
