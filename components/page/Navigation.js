@@ -41,7 +41,7 @@ class Navigation extends React.PureComponent {
         return (
             <SecondaryLinkContainer centered={centered}>
                 {navLinks.map(({ text, link }, index) => (
-                    <LinkContainer>
+                    <LinkContainer key={index}>
                         <Link href={link} key={index}>
                             <GlobalLink href={link}>{text}</GlobalLink>
                         </Link>

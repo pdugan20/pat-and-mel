@@ -11,18 +11,4 @@ export const PrimaryHeading = styled.h1`
     padding-bottom: 6px;
 `;
 
-export const SecondaryHeading = styled.h2`
-    font-size: ${fontSize.sm};
-    font-weight: ${fontWeight.medium};
-    color: ${colors.grayDark};
-    text-transform: uppercase;
-    padding: ${(props) => (props.isCard ? '16px' : '0')};
-`;
-
-export const SubHeading = styled.h3`
-    font-size: ${fontSize.md};
-    font-weight: ${fontWeight.regular};
-    color: ${colors.grayMedium};
-`;
-
-export default { PrimaryHeading, SecondaryHeading, SubHeading };
+export default { PrimaryHeading };

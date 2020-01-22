@@ -4,8 +4,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { device } from '../constants/breakpoints';
 import colors from '../constants/colors';
+import spacing from '../constants/spacing';
+import { borderRadius } from '../constants/dimensions';
 
 const mapApiKey = 'AIzaSyDNvaSlj_yrjkhClop5dPBDPSNUjOUS_a8';
+const desktopMapHeight = '300px';
+const mobileMapHeight = '250px';
 
 const propTypes = {
     mapOptions: PropTypes.object,
@@ -79,13 +83,13 @@ export default AuroraMap;
 
 const mapStyle = `
     border: 1px solid ${colors.grayLight};
-    height: 300px;
+    height: ${desktopMapHeight};
     width: 100%;
-    border-radius: 4px;
-    margin-top: 24px;
+    border-radius: ${borderRadius.sm};
+    margin-top: calc(${spacing.sm} + ${spacing.md});
 
     @media ${device.tablet} {
-        height: 250px;
+        height: ${mobileMapHeight};
     }
 `;
 

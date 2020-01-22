@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import colors from '../constants/colors';
 import { lineHeight } from '../constants/type';
 import { device } from '../constants/breakpoints';
+import spacing from '../constants/spacing';
 
 export const RootView = styled.div`
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    padding: 24px;
+    text-align: left;
+    padding: calc(${spacing.sm} + ${spacing.md});
     box-sizing: border-box;
 
     a:hover {

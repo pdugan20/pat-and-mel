@@ -17,7 +17,7 @@ class AccommodationPage extends React.PureComponent {
 
     renderDescription = () => {
         return (
-            <AccommodationDescription>
+            <StyledDescription>
                 <PrimaryHeading>Accommodations & Travel</PrimaryHeading>
                 <span>
                     Reserved room blocks will be available at the following
@@ -54,7 +54,7 @@ class AccommodationPage extends React.PureComponent {
                     The airports nearest to Aurora are Ithaca (ITH) and Syracuse
                     (SYR).
                 </span>
-            </AccommodationDescription>
+            </StyledDescription>
         );
     };
 
@@ -85,10 +85,6 @@ class AccommodationPage extends React.PureComponent {
 }
 
 export default AccommodationPage;
-
-const AccommodationDescription = styled(StyledDescription)`
-    text-align: left;
-`;
 
 const HotelDescription = styled.div`
     margin-top: ${spacing.md};

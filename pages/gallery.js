@@ -111,7 +111,6 @@ const GalleryRootView = styled(RootView)`
     display: block;
     height: initial;
     width: 100%;
-    text-align: left;
 
     .react-photo-gallery--gallery {
         margin: 0 -2px;

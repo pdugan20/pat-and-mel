@@ -17,7 +17,7 @@ class SchedulePage extends React.PureComponent {
 
     renderDescription = () => {
         return (
-            <ScheduleDescription>
+            <StyledDescription>
                 <PrimaryHeading>Schedule</PrimaryHeading>
                 <span>
                     The wedding ceremony and reception will take place at the{' '}
@@ -60,7 +60,7 @@ class SchedulePage extends React.PureComponent {
                 <EventDescription>
                     Breakfast, Time & location to be announced
                 </EventDescription>
-            </ScheduleDescription>
+            </StyledDescription>
         );
     };
 
@@ -91,10 +91,6 @@ class SchedulePage extends React.PureComponent {
 }
 
 export default SchedulePage;
-
-const ScheduleDescription = styled(StyledDescription)`
-    text-align: left;
-`;
 
 const DateTitle = styled.div`
     margin-top: ${spacing.md};

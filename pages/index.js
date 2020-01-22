@@ -66,4 +66,5 @@ export default HomePage;
 
 const HomeRootView = styled(RootView)`
     height: 100vh;
+    text-align: center;
 `;
