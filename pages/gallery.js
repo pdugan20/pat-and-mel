@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Page from '../layouts/main';
@@ -7,6 +7,7 @@ import { RootView } from '../styles/page';
 import { photos } from '../constants/photos';
 import Navigation from '../components/page/Navigation';
 import { PrimaryHeading } from '../styles/headings';
+import { device } from '../constants/breakpoints';
 
 const modalBackgroundColor = 'rgba(0,0,0,0.9)';
 
@@ -24,10 +25,8 @@ class GalleryPage extends React.PureComponent {
     openLightbox = (event, { index }) => {
         this.setState({
             currentImage: index,
+            viewerIsOpen: true,
         });
-        this.timeout = setTimeout(() => {
-            this.setState({ viewerIsOpen: true });
-        }, 500);
     };
 
     closeLightbox = () => {
@@ -92,17 +91,28 @@ class GalleryPage extends React.PureComponent {
         const { title } = this.state;
 
         return (
-            <Page
-                singleColumn
-                title={title}
-                desktopMaxWidth='1000px'
-                mainColumn={this.renderMainColumn()}
-            />
+            <>
+                <GlobalStyle />
+                <Page
+                    singleColumn
+                    title={title}
+                    desktopMaxWidth='1000px'
+                    mainColumn={this.renderMainColumn()}
+                />
+            </>
         );
     }
 }
 
 export default GalleryPage;
+
+const GlobalStyle = createGlobalStyle`
+    body {
+        @media ${device.tablet} {
+            margin-right: 1px !important;
+        }
+    }
+`;
 
 const GalleryRootView = styled(RootView)`
     display: block;
