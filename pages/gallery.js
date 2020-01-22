@@ -24,13 +24,14 @@ class GalleryPage extends React.PureComponent {
     openLightbox = (event, { index }) => {
         this.setState({
             currentImage: index,
-            viewerIsOpen: true,
         });
+        this.timeout = setTimeout(() => {
+            this.setState({ viewerIsOpen: true });
+        }, 500);
     };
 
     closeLightbox = () => {
         this.setState({
-            currentImage: 0,
             viewerIsOpen: false,
         });
     };
@@ -62,11 +63,7 @@ class GalleryPage extends React.PureComponent {
                     >
                         <Carousel
                             currentIndex={currentImage}
-                            views={photos.map((x) => ({
-                                ...x,
-                                srcset: x.srcSet,
-                                caption: x.title,
-                            }))}
+                            views={photos}
                             components={{
                                 FooterCount: () => null,
                             }}
@@ -109,7 +106,6 @@ export default GalleryPage;
 
 const GalleryRootView = styled(RootView)`
     display: block;
-    height: initial;
     width: 100%;
 
     .react-photo-gallery--gallery {
