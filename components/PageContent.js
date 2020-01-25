@@ -3,36 +3,27 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 import { PrimaryHeading } from '../styles/headings';
-import { Card } from '../styles/card';
 import spacing from '../constants/spacing';
 
 const propTypes = {
     title: PropTypes.array.isRequired,
     description: PropTypes.array.isRequired,
-    hideFooter: PropTypes.bool,
-};
-
-const defaultProps = {
-    hideFooter: false,
 };
 
 class PageContent extends React.PureComponent {
     render() {
-        const { title, description, hideFooter } = this.props;
+        const { title, description } = this.props;
 
         return (
             <RootView>
-                <Card hideGutter={hideFooter}>
-                    <PrimaryHeading>{RichText.asText(title)}</PrimaryHeading>
-                    <RichText render={description} />
-                </Card>
+                <PrimaryHeading>{RichText.asText(title)}</PrimaryHeading>
+                <RichText render={description} />
             </RootView>
         );
     }
 }
 
 PageContent.propTypes = propTypes;
-PageContent.defaultProps = defaultProps;
 
 export default PageContent;
 
