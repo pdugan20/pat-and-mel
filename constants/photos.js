@@ -289,12 +289,6 @@ export const photos = [
     },
     {
         src:
-            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F50.jpg?alt=media&token=e11b57b4-4788-4f3c-9dc2-ec193f1f47a8',
-        width: 1500,
-        height: 2000,
-    },
-    {
-        src:
             'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F51.jpg?alt=media&token=290c2465-7304-4d43-8452-c099bcea677b',
         width: 1500,
         height: 1125,
