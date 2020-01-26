@@ -287,6 +287,30 @@ export const photos = [
         width: 1500,
         height: 1125,
     },
+    {
+        src:
+            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F50.jpg?alt=media&token=e11b57b4-4788-4f3c-9dc2-ec193f1f47a8',
+        width: 1500,
+        height: 2000,
+    },
+    {
+        src:
+            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F51.jpg?alt=media&token=290c2465-7304-4d43-8452-c099bcea677b',
+        width: 1500,
+        height: 1125,
+    },
+    {
+        src:
+            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F52.jpg?alt=media&token=d714f647-e963-4f0c-94cb-4ca62396bde4',
+        width: 1500,
+        height: 1125,
+    },
+    {
+        src:
+            'https://firebasestorage.googleapis.com/v0/b/pat-and-mel.appspot.com/o/gallery%2F53.jpg?alt=media&token=ea71ff5b-ff33-4a95-a5e5-34102b0184fd',
+        width: 1500,
+        height: 1125,
+    },
 ];
 
 export default { photos };
