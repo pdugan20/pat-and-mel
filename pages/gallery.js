@@ -1,15 +1,13 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Gallery from 'react-photo-gallery';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import FsLightbox from 'fslightbox-react';
 import Page from '../layouts/main';
 import { RootView } from '../styles/page';
 import { photos } from '../constants/photos';
 import Navigation from '../components/page/Navigation';
 import { PrimaryHeading } from '../styles/headings';
 import { device } from '../constants/breakpoints';
-
-const modalBackgroundColor = 'rgba(0,0,0,0.9)';
 
 class GalleryPage extends React.PureComponent {
     constructor(props) {
@@ -18,21 +16,29 @@ class GalleryPage extends React.PureComponent {
         this.state = {
             title: 'Photo Gallery',
             currentImage: 0,
-            viewerIsOpen: false,
+            photoArray: [],
         };
+    }
+
+    componentDidMount() {
+        const photoArray = [];
+        /* eslint-disable-next-line */
+        for (const image in photos) {
+            if ({}.hasOwnProperty.call(photos, image)) {
+                photoArray.push(photos[image].src);
+            }
+        }
+        this.setState({ photoArray });
     }
 
     openLightbox = (event, { index }) => {
         this.setState({
-            currentImage: index,
-            viewerIsOpen: true,
+            currentImage: index + 1,
         });
     };
 
-    closeLightbox = () => {
-        this.setState({
-            viewerIsOpen: false,
-        });
+    toggleLightbox = () => {
+        return true;
     };
 
     renderGallery = () => {
@@ -45,32 +51,18 @@ class GalleryPage extends React.PureComponent {
     };
 
     renderLightBox = () => {
-        const { viewerIsOpen, currentImage } = this.state;
-
-        return (
-            <ModalGateway>
-                {viewerIsOpen ? (
-                    <Modal
-                        onClose={this.closeLightbox}
-                        allowFullscreen={false}
-                        styles={{
-                            blanket: (base) => ({
-                                ...base,
-                                backgroundColor: modalBackgroundColor,
-                            }),
-                        }}
-                    >
-                        <Carousel
-                            currentIndex={currentImage}
-                            views={photos}
-                            components={{
-                                FooterCount: () => null,
-                            }}
-                        />
-                    </Modal>
-                ) : null}
-            </ModalGateway>
-        );
+        const { photoArray, currentImage } = this.state;
+        if (photoArray.length > 0) {
+            return (
+                <FsLightbox
+                    toggler={() => this.toggleLightbox()}
+                    sources={photoArray}
+                    slide={currentImage}
+                    type='image'
+                />
+            );
+        }
+        return null;
     };
 
     renderMainColumn = () => {
