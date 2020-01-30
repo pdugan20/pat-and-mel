@@ -17,6 +17,7 @@ class GalleryPage extends React.PureComponent {
             title: 'Photo Gallery',
             currentImage: 0,
             photoArray: [],
+            isVisible: true,
         };
     }
 
@@ -32,13 +33,11 @@ class GalleryPage extends React.PureComponent {
     }
 
     openLightbox = (event, { index }) => {
+        const { isVisible } = this.state;
         this.setState({
             currentImage: index + 1,
+            isVisible: !isVisible,
         });
-    };
-
-    toggleLightbox = () => {
-        return true;
     };
 
     renderGallery = () => {
@@ -51,11 +50,11 @@ class GalleryPage extends React.PureComponent {
     };
 
     renderLightBox = () => {
-        const { photoArray, currentImage } = this.state;
+        const { isVisible, photoArray, currentImage } = this.state;
         if (photoArray.length > 0) {
             return (
                 <FsLightbox
-                    toggler={() => this.toggleLightbox()}
+                    toggler={isVisible}
                     sources={photoArray}
                     slide={currentImage}
                     type='image'
