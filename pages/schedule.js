@@ -54,7 +54,14 @@ class SchedulePage extends React.PureComponent {
                     </a>
                 </EventDescription>
                 <EventDescription>
-                    11:00pm - Afterparty, Location to be announced
+                    11:00pm - Afterparty, The Fargo{' '}
+                    <a
+                        href='https://goo.gl/maps/RgcMvb7MF1EMV5Rc9'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        384 Main St, Aurora, NY 13026
+                    </a>
                 </EventDescription>
                 <DateTitle>Sunday, June 14</DateTitle>
                 <EventDescription>

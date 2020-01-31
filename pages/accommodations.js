@@ -20,11 +20,9 @@ class AccommodationPage extends React.PureComponent {
             <StyledDescription>
                 <PrimaryHeading>Accommodations & Travel</PrimaryHeading>
                 <span>
-                    Reserved room blocks will be available at the following
+                    Reserved room blocks are available at the following
                     locations in Aurora and can be reserved by calling{' '}
-                    <a href='tel:315-364-8888'>315-364-8888</a>. Please wait
-                    until Monday, January 20 before calling to reserve your
-                    accommodations.
+                    <a href='tel:315-364-8888'>315-364-8888</a>.
                 </span>
                 <HotelDescription>
                     The Aurora Inn
