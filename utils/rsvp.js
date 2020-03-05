@@ -7,7 +7,7 @@ export async function writeRsvpData(formData) {
         .firestore()
         .collection('rsvp')
         .doc()
-        .set({ formData }, { merge: true });
+        .set(formData, { merge: true });
 }
 
 export default { writeRsvpData };
