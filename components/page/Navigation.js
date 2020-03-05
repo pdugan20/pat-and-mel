@@ -19,18 +19,27 @@ const navLinks = [
     {
         text: 'Home',
         link: '/',
+        external: false,
     },
     {
         text: 'Accommodations & Travel',
         link: '/accommodations',
+        external: false,
     },
     {
         text: 'Gallery',
         link: '/gallery',
+        external: false,
     },
     {
         text: 'Schedule',
         link: '/schedule',
+        external: false,
+    },
+    {
+        text: 'Registery',
+        link: 'https://www.zola.com/registry/melanie-pat',
+        external: true,
     },
 ];
 
