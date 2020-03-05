@@ -3,6 +3,7 @@ import colors from '../constants/colors';
 import { fontSize, typeface } from '../constants/type';
 import { borderRadius, input } from '../constants/dimensions';
 import spacing from '../constants/spacing';
+import { device } from '../constants/breakpoints';
 
 export const StyledInput = styled.input`
     border-radius: ${borderRadius.sm};
@@ -22,6 +23,10 @@ export const StyledInput = styled.input`
 
     &::-moz-placeholder {
         color: ${colors.grayMedium};
+    }
+
+    @media ${device.tablet} {
+        width: 100%;
     }
 `;
 
@@ -46,6 +51,10 @@ export const StyledTextArea = styled.textarea`
 
     &::-moz-placeholder {
         color: ${colors.grayMedium};
+    }
+
+    @media ${device.tablet} {
+        width: 100%;
     }
 `;
 
@@ -76,6 +85,10 @@ export const StyledDropdown = styled.select`
     &::-moz-placeholder {
         color: ${colors.grayMedium};
     }
+
+    @media ${device.tablet} {
+        width: 100%;
+    }
 `;
 
 export const StyledButton = styled.button`
@@ -102,6 +115,10 @@ export const StyledButton = styled.button`
 
     &::-moz-placeholder {
         color: ${colors.grayMedium};
+    }
+
+    @media ${device.tablet} {
+        width: 100%;
     }
 `;
 

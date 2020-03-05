@@ -18,8 +18,11 @@ class RsvpPage extends React.PureComponent {
             showGuestFields: false,
             name: '',
             guestName: '',
+            meal: '',
+            guestMeal: '',
             dietaryRestriction: '',
             song: '',
+            note: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -191,7 +194,32 @@ class RsvpPage extends React.PureComponent {
     };
 
     handleSubmit = (event) => {
-        // console.log(this.state);
+        const {
+            name,
+            guestName,
+            meal,
+            guestMeal,
+            dietaryRestriction,
+            song,
+            note,
+            showGuestFields,
+        } = this.state;
+
+        const formData = {
+            name,
+            meal,
+            dietaryRestriction,
+            song,
+            note,
+        };
+
+        if (showGuestFields) {
+            formData.guestName = guestName;
+            formData.guestMeal = guestMeal;
+        }
+
+        console.log(formData);
+
         event.preventDefault();
     };
 
