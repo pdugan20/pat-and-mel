@@ -8,14 +8,16 @@ import {
     StyledTextArea,
     StyledButton,
 } from '../styles/forms';
+import { writeRsvpData } from '../utils/rsvp';
 
-class RsvpPage extends React.PureComponent {
+class RsvpPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             title: 'RSVP',
             showGuestFields: false,
+            attendance: '',
             name: '',
             guestName: '',
             meal: '',
@@ -196,6 +198,7 @@ class RsvpPage extends React.PureComponent {
     handleSubmit = (event) => {
         const {
             name,
+            attendance,
             guestName,
             meal,
             guestMeal,
@@ -207,6 +210,7 @@ class RsvpPage extends React.PureComponent {
 
         const formData = {
             name,
+            attendance,
             meal,
             dietaryRestriction,
             song,
@@ -218,8 +222,7 @@ class RsvpPage extends React.PureComponent {
             formData.guestMeal = guestMeal;
         }
 
-        console.log(formData);
-
+        writeRsvpData(formData);
         event.preventDefault();
     };
 
