@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import Router from 'next/router';
 import Page from '../layouts/main';
 import { RootView } from '../styles/page';
-import {
-    StyledInput,
-    StyledDropdown,
-    StyledTextArea,
-    StyledButton,
-} from '../styles/forms';
+import { StyledInput, StyledDropdown, StyledButton } from '../styles/forms';
 import ConfirmationImage from '../components/ConfirmationImage';
 import { lineHeight } from '../constants/type';
 import { writeRsvpData } from '../utils/rsvp';
@@ -24,11 +19,7 @@ class RsvpPage extends React.Component {
             attendance: '',
             name: '',
             guestName: '',
-            meal: '',
-            guestMeal: '',
             dietaryRestriction: '',
-            song: '',
-            note: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -111,78 +102,6 @@ class RsvpPage extends React.Component {
         );
     };
 
-    renderMealOptions = () => {
-        return (
-            <>
-                <option value='salmon'>Seared salmon</option>
-                <option value='chicken'>Honey roasted garlic chicken</option>
-                <option value='beef'>Beef tenderloin & gulf shrimp</option>
-                <option value='vegetarian'>Vegetarian</option>
-            </>
-        );
-    };
-
-    renderMealDropdown = () => {
-        return (
-            <StyledDropdown
-                name='meal'
-                defaultValue='default'
-                onChange={this.handleChange}
-            >
-                <option value='default' disabled>
-                    What meal would you like?
-                </option>
-                {this.renderMealOptions()}
-            </StyledDropdown>
-        );
-    };
-
-    renderGuestMealDropdown = () => {
-        const { showGuestFields } = this.state;
-
-        return (
-            showGuestFields && (
-                <StyledDropdown
-                    name='guestMeal'
-                    defaultValue='default'
-                    onChange={this.handleChange}
-                >
-                    <option value='default' disabled>
-                        What meal would your guest like?
-                    </option>
-                    {this.renderMealOptions()}
-                </StyledDropdown>
-            )
-        );
-    };
-
-    renderSongField = () => {
-        const { song } = this.state;
-
-        return (
-            <StyledInput
-                type='text'
-                name='song'
-                value={song}
-                onChange={this.handleChange}
-                placeholder="Any songs you'd like to hear?"
-            />
-        );
-    };
-
-    renderNoteField = () => {
-        const { note } = this.state;
-
-        return (
-            <StyledTextArea
-                name='note'
-                value={note}
-                onChange={this.handleChange}
-                placeholder="Anything you'd like to say to Mel & Pat?"
-            />
-        );
-    };
-
     renderSubmitButton = () => {
         return (
             <StyledButton type='submit' value='submit'>
@@ -201,10 +120,10 @@ class RsvpPage extends React.Component {
         const { attendance } = this.state;
 
         let confirmationMessage =
-            "We've got your RSVP and we're so excited for you to join us in June!";
+            "We've got your RSVP and we are pumped to have you join us at our rehearsal dinner!";
         if (attendance === 'no') {
             confirmationMessage =
-                "We're bummed you won't be able to attend but we obviously still love you.";
+                "We're bummed you won't be able to attend the rehearsal dinner but we'll see you at the wedding!";
         }
         this.redirectToHome();
 
@@ -236,29 +155,21 @@ class RsvpPage extends React.Component {
             name,
             attendance,
             guestName,
-            meal,
-            guestMeal,
             dietaryRestriction,
-            song,
-            note,
             showGuestFields,
         } = this.state;
 
         const formData = {
             name,
             attendance,
-            meal,
             dietaryRestriction,
-            song,
-            note,
         };
 
         if (showGuestFields) {
             formData.guestName = guestName;
-            formData.guestMeal = guestMeal;
         }
 
-        writeRsvpData(formData, 'rsvp');
+        writeRsvpData(formData, 'rehearsal-rsvp');
         this.setState({ showSuccessMessage: true });
         event.preventDefault();
     };
@@ -269,12 +180,8 @@ class RsvpPage extends React.Component {
                 {this.renderNameField()}
                 {this.renderAttendanceDropdown()}
                 {this.renderGuestDropdown()}
-                {this.renderMealDropdown()}
                 {this.renderGuestNameField()}
-                {this.renderGuestMealDropdown()}
                 {this.renderDietaryRestrictionField()}
-                {this.renderSongField()}
-                {this.renderNoteField()}
                 {this.renderSubmitButton()}
             </form>
         );

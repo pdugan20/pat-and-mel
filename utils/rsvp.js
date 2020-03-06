@@ -2,10 +2,10 @@ import firebase from '@firebase/app';
 import '@firebase/firestore';
 import '@firebase/storage';
 
-export async function writeRsvpData(formData) {
+export async function writeRsvpData(formData, collectionName) {
     firebase
         .firestore()
-        .collection('rsvp')
+        .collection(collectionName)
         .doc()
         .set(formData, { merge: true });
 }
