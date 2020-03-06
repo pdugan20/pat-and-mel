@@ -256,13 +256,13 @@ class RsvpPage extends React.Component {
     };
 
     render() {
-        const { showGuestFields, title } = this.state;
+        const { title } = this.state;
 
         return (
             <Page
                 singleColumn
                 title={title}
-                mainColumn={this.renderMainColumn(showGuestFields)}
+                mainColumn={this.renderMainColumn()}
             />
         );
     }
