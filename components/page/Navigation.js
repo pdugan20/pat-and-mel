@@ -19,27 +19,27 @@ const navLinks = [
     {
         text: 'Home',
         link: '/',
-        external: false,
+        target: null,
     },
     {
         text: 'Accommodations & Travel',
         link: '/accommodations',
-        external: false,
+        target: null,
     },
     {
         text: 'Gallery',
         link: '/gallery',
-        external: false,
+        target: null,
     },
     {
         text: 'Schedule',
         link: '/schedule',
-        external: false,
+        target: null,
     },
     {
         text: 'Registery',
         link: 'https://www.zola.com/registry/melanie-pat',
-        external: true,
+        target: '_blank',
     },
 ];
 
@@ -49,10 +49,12 @@ class Navigation extends React.PureComponent {
 
         return (
             <SecondaryLinkContainer centered={centered}>
-                {navLinks.map(({ text, link }, index) => (
+                {navLinks.map(({ text, link, target }, index) => (
                     <LinkContainer key={index}>
-                        <Link href={link} key={index}>
-                            <GlobalLink href={link}>{text}</GlobalLink>
+                        <Link href={link} key={index} prefetch={false}>
+                            <GlobalLink href={link} target={target}>
+                                {text}
+                            </GlobalLink>
                         </Link>
                     </LinkContainer>
                 ))}
