@@ -13,7 +13,7 @@ class RsvpPage extends React.Component {
         super(props);
 
         this.state = {
-            title: 'RSVP',
+            title: 'Rehearsal RSVP',
             showGuestFields: false,
             showSuccessMessage: false,
             attendance: '',
