@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import colors from '../constants/colors';
-import { fontSize } from '../constants/type';
+import { fontSize, lineHeight } from '../constants/type';
 
 export const LinkContainer = styled.div`
     display: inline;
@@ -33,7 +33,7 @@ export const SecondaryLinkContainer = styled.div`
     margin-top: 16px;
     color: ${colors.gray};
     width: 100%;
-    line-height: 1.3;
+    line-height: ${lineHeight.lh_13};
     border-top: solid ${colors.grayLight};
     border-width: ${(props) => (props.centered ? '0' : '1px')};
     padding-top: ${(props) => (props.centered ? '4px' : '8px')};

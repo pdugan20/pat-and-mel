@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Router from 'next/router';
 import Page from '../layouts/main';
 import { RootView } from '../styles/page';
 import {
@@ -8,6 +9,8 @@ import {
     StyledTextArea,
     StyledButton,
 } from '../styles/forms';
+import ConfirmationImage from '../components/ConfirmationImage';
+import { lineHeight } from '../constants/type';
 import { writeRsvpData } from '../utils/rsvp';
 
 class RsvpPage extends React.Component {
@@ -17,6 +20,7 @@ class RsvpPage extends React.Component {
         this.state = {
             title: 'RSVP',
             showGuestFields: false,
+            showSuccessMessage: false,
             attendance: '',
             name: '',
             guestName: '',
@@ -55,7 +59,7 @@ class RsvpPage extends React.Component {
                 <option value='default' disabled>
                     Will you be able to attend?
                 </option>
-                <option value='yes'>Yes, you bet your ass I will attend</option>
+                <option value='yes'>Yes, you bet I will attend</option>
                 <option value='no'>No, I will not be able to attend</option>
             </StyledDropdown>
         );
@@ -187,8 +191,40 @@ class RsvpPage extends React.Component {
         );
     };
 
+    redirectToHome = () => {
+        this.timeout = setTimeout(() => {
+            Router.push('/');
+        }, 5000);
+    };
+
+    renderSuccessMessage = () => {
+        const { attendance } = this.state;
+
+        let confirmationMessage =
+            "We've got your RSVP and we're so excited for you to join us in June!";
+        if (attendance === 'no') {
+            confirmationMessage =
+                "We're bummed you won't be able to attend but we obviously still love you.";
+        }
+        this.redirectToHome();
+
+        return (
+            <>
+                <ConfirmationImage />
+                <ConfirmationMessage>{confirmationMessage}</ConfirmationMessage>
+            </>
+        );
+    };
+
     renderMainColumn = () => {
-        return <RsvpRootView>{this.renderRsvpForm()}</RsvpRootView>;
+        const { showSuccessMessage } = this.state;
+
+        return (
+            <RsvpRootView>
+                {!showSuccessMessage && this.renderRsvpForm()}
+                {showSuccessMessage && this.renderSuccessMessage()}
+            </RsvpRootView>
+        );
     };
 
     handleChange = (event) => {
@@ -223,6 +259,7 @@ class RsvpPage extends React.Component {
         }
 
         writeRsvpData(formData);
+        this.setState({ showSuccessMessage: true });
         event.preventDefault();
     };
 
@@ -273,4 +310,10 @@ export default RsvpPage;
 const RsvpRootView = styled(RootView)`
     height: 100vh;
     text-align: center;
+    line-height: ${lineHeight.lh_13};
+`;
+
+const ConfirmationMessage = styled.div`
+    width: 350px;
+    margin: 0 auto;
 `;
