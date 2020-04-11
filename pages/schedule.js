@@ -28,11 +28,11 @@ class SchedulePage extends React.PureComponent {
                     >
                         Aurora Inn
                     </a>{' '}
-                    on the evening of Saturday, June 13th and there will be a
+                    on the evening of Saturday, June 12th, 2021. There will be a
                     breakfast at a yet to be determined location the morning of
-                    Sunday, June 14th.
+                    Sunday, June 13th.
                 </span>
-                <DateTitle>Saturday, June 13</DateTitle>
+                <DateTitle>Saturday, June 12</DateTitle>
                 <EventDescription>
                     5:00pm - Wedding Ceremony, The Aurora Inn,{' '}
                     <a
@@ -63,7 +63,7 @@ class SchedulePage extends React.PureComponent {
                         384 Main St, Aurora, NY 13026
                     </a>
                 </EventDescription>
-                <DateTitle>Sunday, June 14</DateTitle>
+                <DateTitle>Sunday, June 13</DateTitle>
                 <EventDescription>
                     Breakfast, Time & location to be announced
                 </EventDescription>

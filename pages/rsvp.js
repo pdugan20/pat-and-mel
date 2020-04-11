@@ -258,7 +258,7 @@ class RsvpPage extends React.Component {
             formData.guestMeal = guestMeal;
         }
 
-        writeRsvpData(formData, 'rsvp');
+        writeRsvpData(formData, 'rsvp-2021');
         this.setState({ showSuccessMessage: true });
         event.preventDefault();
     };
