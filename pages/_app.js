@@ -3,6 +3,9 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Fire from '../lib/db';
 
+import '../css/reset.css';
+import '../css/nprogress.css';
+
 const theme = {};
 
 class PatAndMel extends App {

@@ -24,18 +24,14 @@ class StoryPage extends React.PureComponent {
         };
     }
 
-    renderMainColumn = () => {
-        return (
-            <StyledRootView>
-                {this.renderStory()}
-                {this.renderLinkGroup()}
-            </StyledRootView>
-        );
-    };
+    renderMainColumn = () => (
+        <StyledRootView>
+            {this.renderStory()}
+            {this.renderLinkGroup()}
+        </StyledRootView>
+    );
 
-    renderLinkGroup = () => {
-        return <Navigation />;
-    };
+    renderLinkGroup = () => <Navigation />;
 
     renderStory = () => {
         const { title, story } = this.props;

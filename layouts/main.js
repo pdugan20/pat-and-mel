@@ -8,9 +8,6 @@ import { typeface, fontSize } from '../constants/type';
 import colors from '../constants/colors';
 import { device } from '../constants/breakpoints';
 
-import '../css/reset.css';
-import '../css/nprogress.css';
-
 const columnType = [PropTypes.object, PropTypes.array];
 
 const propTypes = {

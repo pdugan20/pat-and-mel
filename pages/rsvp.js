@@ -49,37 +49,33 @@ class RsvpPage extends React.Component {
         );
     };
 
-    renderAttendanceDropdown = () => {
-        return (
-            <StyledDropdown
-                name='attendance'
-                defaultValue='default'
-                onChange={this.handleChange}
-            >
-                <option value='default' disabled>
-                    Will you be able to attend?
-                </option>
-                <option value='yes'>Yes, you bet I will attend</option>
-                <option value='no'>No, I will not be able to attend</option>
-            </StyledDropdown>
-        );
-    };
+    renderAttendanceDropdown = () => (
+        <StyledDropdown
+            name='attendance'
+            defaultValue='default'
+            onChange={this.handleChange}
+        >
+            <option value='default' disabled>
+                Will you be able to attend?
+            </option>
+            <option value='yes'>Yes, you bet I will attend</option>
+            <option value='no'>No, I will not be able to attend</option>
+        </StyledDropdown>
+    );
 
-    renderGuestDropdown = () => {
-        return (
-            <StyledDropdown
-                name='guestAttendance'
-                defaultValue='default'
-                onChange={this.onGuestChange}
-            >
-                <option value='default' disabled>
-                    Will you be bringing a guest?
-                </option>
-                <option value='yes'>Yes, I am bringing a guest</option>
-                <option value='no'>No, I will be flying solo</option>
-            </StyledDropdown>
-        );
-    };
+    renderGuestDropdown = () => (
+        <StyledDropdown
+            name='guestAttendance'
+            defaultValue='default'
+            onChange={this.onGuestChange}
+        >
+            <option value='default' disabled>
+                Will you be bringing a guest?
+            </option>
+            <option value='yes'>Yes, I am bringing a guest</option>
+            <option value='no'>No, I will be flying solo</option>
+        </StyledDropdown>
+    );
 
     renderGuestNameField = () => {
         const { showGuestFields, guestName } = this.state;
@@ -111,31 +107,27 @@ class RsvpPage extends React.Component {
         );
     };
 
-    renderMealOptions = () => {
-        return (
-            <>
-                <option value='salmon'>Seared salmon</option>
-                <option value='chicken'>Honey roasted garlic chicken</option>
-                <option value='beef'>Beef tenderloin & gulf shrimp</option>
-                <option value='vegetarian'>Vegetarian</option>
-            </>
-        );
-    };
+    renderMealOptions = () => (
+        <>
+            <option value='salmon'>Seared salmon</option>
+            <option value='chicken'>Honey roasted garlic chicken</option>
+            <option value='beef'>Beef tenderloin & gulf shrimp</option>
+            <option value='vegetarian'>Vegetarian</option>
+        </>
+    );
 
-    renderMealDropdown = () => {
-        return (
-            <StyledDropdown
-                name='meal'
-                defaultValue='default'
-                onChange={this.handleChange}
-            >
-                <option value='default' disabled>
-                    What meal would you like?
-                </option>
-                {this.renderMealOptions()}
-            </StyledDropdown>
-        );
-    };
+    renderMealDropdown = () => (
+        <StyledDropdown
+            name='meal'
+            defaultValue='default'
+            onChange={this.handleChange}
+        >
+            <option value='default' disabled>
+                What meal would you like?
+            </option>
+            {this.renderMealOptions()}
+        </StyledDropdown>
+    );
 
     renderGuestMealDropdown = () => {
         const { showGuestFields } = this.state;
@@ -183,13 +175,11 @@ class RsvpPage extends React.Component {
         );
     };
 
-    renderSubmitButton = () => {
-        return (
-            <StyledButton type='submit' value='submit'>
-                Send It!
-            </StyledButton>
-        );
-    };
+    renderSubmitButton = () => (
+        <StyledButton type='submit' value='submit'>
+            Send It!
+        </StyledButton>
+    );
 
     redirectToHome = () => {
         this.timeout = setTimeout(() => {
@@ -263,22 +253,20 @@ class RsvpPage extends React.Component {
         event.preventDefault();
     };
 
-    renderRsvpForm = () => {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                {this.renderNameField()}
-                {this.renderAttendanceDropdown()}
-                {this.renderGuestDropdown()}
-                {this.renderMealDropdown()}
-                {this.renderGuestNameField()}
-                {this.renderGuestMealDropdown()}
-                {this.renderDietaryRestrictionField()}
-                {this.renderSongField()}
-                {this.renderNoteField()}
-                {this.renderSubmitButton()}
-            </form>
-        );
-    };
+    renderRsvpForm = () => (
+        <form onSubmit={this.handleSubmit}>
+            {this.renderNameField()}
+            {this.renderAttendanceDropdown()}
+            {this.renderGuestDropdown()}
+            {this.renderMealDropdown()}
+            {this.renderGuestNameField()}
+            {this.renderGuestMealDropdown()}
+            {this.renderDietaryRestrictionField()}
+            {this.renderSongField()}
+            {this.renderNoteField()}
+            {this.renderSubmitButton()}
+        </form>
+    );
 
     onGuestChange = (event) => {
         const isBringingGuest = event.target.value;

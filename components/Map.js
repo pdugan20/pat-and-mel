@@ -50,9 +50,7 @@ class AuroraMap extends React.PureComponent {
         this.setCenter();
     };
 
-    renderEmptyState = () => {
-        return <MapEmptyState />;
-    };
+    renderEmptyState = () => <MapEmptyState />;
 
     render() {
         const { center } = this.state;

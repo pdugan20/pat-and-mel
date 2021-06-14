@@ -13,41 +13,25 @@ class HomePage extends React.PureComponent {
         };
     }
 
-    renderHeroImage = () => {
-        return <HeroImage />;
-    };
+    renderHeroImage = () => <HeroImage />;
 
-    renderDescription = () => {
-        return (
-            <StyledDescription>
-                Melanie and Pat are so excited to invite you to join us for our
-                wedding which will take place at 5:00PM on Saturday, June 12,
-                2021 at the{' '}
-                <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='https://innsofaurora.com/'
-                >
-                    Aurora Inn
-                </a>{' '}
-                in Aurora, NY.
-            </StyledDescription>
-        );
-    };
+    renderDescription = () => (
+        <StyledDescription>
+            Melanie and Pat are so excited to invite you to join us for our
+            rescheduled wedding, which will be taking place in early June of
+            2022 in Aurora, NY.
+        </StyledDescription>
+    );
 
-    renderLinkGroup = () => {
-        return <Navigation centered />;
-    };
+    renderLinkGroup = () => <Navigation centered />;
 
-    renderMainColumn = () => {
-        return (
-            <HomeRootView>
-                {this.renderHeroImage()}
-                {this.renderDescription()}
-                {this.renderLinkGroup()}
-            </HomeRootView>
-        );
-    };
+    renderMainColumn = () => (
+        <HomeRootView>
+            {this.renderHeroImage()}
+            {this.renderDescription()}
+            {this.renderLinkGroup()}
+        </HomeRootView>
+    );
 
     render() {
         const { title } = this.state;

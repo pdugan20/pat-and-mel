@@ -15,59 +15,53 @@ class AccommodationPage extends React.PureComponent {
         };
     }
 
-    renderDescription = () => {
-        return (
-            <StyledDescription>
-                <PrimaryHeading>Accommodations & Travel</PrimaryHeading>
-                <span>
-                    Reserved room blocks are available at the following
-                    locations in Aurora and can be reserved by calling{' '}
-                    <a href='tel:315-364-8888'>315-364-8888</a>.
-                </span>
-                <HotelDescription>
-                    The Aurora Inn
-                    <br />
-                    <a
-                        href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        391 Main St, Aurora, NY 13026
-                    </a>
-                </HotelDescription>
-                <HotelDescription>
-                    Wallcourt Hall
-                    <br />
-                    <a
-                        href='https://goo.gl/maps/6A75ULxbj4D5Ypit6'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        38 Lafayette St, Aurora, NY 13026
-                    </a>
-                </HotelDescription>
-                <AuroraMap />
-                <span>
-                    <br />
-                    The airports nearest to Aurora are Ithaca (ITH) and Syracuse
-                    (SYR).
-                </span>
-            </StyledDescription>
-        );
-    };
+    renderDescription = () => (
+        <StyledDescription>
+            <PrimaryHeading>Accommodations & Travel</PrimaryHeading>
+            <span>
+                Reserved room blocks are available at the following locations in
+                Aurora and can be reserved by calling{' '}
+                <a href='tel:315-364-8888'>315-364-8888</a>.
+            </span>
+            <HotelDescription>
+                The Aurora Inn
+                <br />
+                <a
+                    href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    391 Main St, Aurora, NY 13026
+                </a>
+            </HotelDescription>
+            <HotelDescription>
+                Wallcourt Hall
+                <br />
+                <a
+                    href='https://goo.gl/maps/6A75ULxbj4D5Ypit6'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    38 Lafayette St, Aurora, NY 13026
+                </a>
+            </HotelDescription>
+            <AuroraMap />
+            <span>
+                <br />
+                The airports nearest to Aurora are Ithaca (ITH) and Syracuse
+                (SYR).
+            </span>
+        </StyledDescription>
+    );
 
-    renderLinkGroup = () => {
-        return <Navigation />;
-    };
+    renderLinkGroup = () => <Navigation />;
 
-    renderMainColumn = () => {
-        return (
-            <RootView>
-                {this.renderDescription()}
-                {this.renderLinkGroup()}
-            </RootView>
-        );
-    };
+    renderMainColumn = () => (
+        <RootView>
+            {this.renderDescription()}
+            {this.renderLinkGroup()}
+        </RootView>
+    );
 
     render() {
         const { title } = this.state;

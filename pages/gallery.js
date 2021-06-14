@@ -40,14 +40,12 @@ class GalleryPage extends React.PureComponent {
         });
     };
 
-    renderGallery = () => {
-        return (
-            <>
-                <PrimaryHeading>Photo Gallery</PrimaryHeading>
-                <Gallery photos={photos} onClick={this.openLightbox} />
-            </>
-        );
-    };
+    renderGallery = () => (
+        <>
+            <PrimaryHeading>Photo Gallery</PrimaryHeading>
+            <Gallery photos={photos} onClick={this.openLightbox} />
+        </>
+    );
 
     renderLightBox = () => {
         const { isVisible, photoArray, currentImage } = this.state;
@@ -64,19 +62,15 @@ class GalleryPage extends React.PureComponent {
         return null;
     };
 
-    renderMainColumn = () => {
-        return (
-            <GalleryRootView>
-                {this.renderGallery()}
-                {this.renderLightBox()}
-                {this.renderLinkGroup()}
-            </GalleryRootView>
-        );
-    };
+    renderMainColumn = () => (
+        <GalleryRootView>
+            {this.renderGallery()}
+            {this.renderLightBox()}
+            {this.renderLinkGroup()}
+        </GalleryRootView>
+    );
 
-    renderLinkGroup = () => {
-        return <Navigation />;
-    };
+    renderLinkGroup = () => <Navigation />;
 
     render() {
         const { title } = this.state;
