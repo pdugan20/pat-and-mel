@@ -17,7 +17,4 @@ module.exports = withSourceMaps({
     images: {
         domains: ['firebasestorage.googleapis.com', 'googleapis.com'],
     },
-    future: {
-        webpack5: true,
-    },
 });

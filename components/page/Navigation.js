@@ -52,7 +52,12 @@ class Navigation extends React.PureComponent {
             <SecondaryLinkContainer centered={centered}>
                 {navLinks.map(({ text, link, target, prefetch }, index) => (
                     <LinkContainer key={index}>
-                        <Link href={link} key={index} prefetch={prefetch}>
+                        <Link
+                            href={link}
+                            key={index}
+                            prefetch={prefetch}
+                            passHref
+                        >
                             <GlobalLink href={link} target={target}>
                                 {text}
                             </GlobalLink>
