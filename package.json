@@ -21,7 +21,7 @@
     "@types/react": "^17.0.11",
     "firebase": "^8.6.7",
     "fslightbox-react": "^1.6.2",
-    "next": "^11.0.0",
+    "next": "^11.1.1",
     "nprogress": "^0.2.0",
     "postcss": "^8.3.4",
     "prismic-javascript": "^3.0.2",
