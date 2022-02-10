@@ -17,9 +17,10 @@ class HomePage extends React.PureComponent {
 
     renderDescription = () => (
         <StyledDescription>
-            Melanie and Pat are so excited to invite you to join us for our
-            rescheduled wedding, which will be taking place in early June of
-            2022 in Aurora, NY.
+            We are so excited to invite you to join us for our thrice
+            rescheduled wedding reception which will take place on Saturday,
+            June 4th, 2022 in Aurora, NY. We hope waiting an additional 721 days
+            means you’re ready to party.
         </StyledDescription>
     );
 

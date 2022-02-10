@@ -163,7 +163,7 @@ class RsvpPage extends React.Component {
             formData.guestName = guestName;
         }
 
-        writeRsvpData(formData, 'rehearsal-rsvp-2021');
+        writeRsvpData(formData, 'rehearsal-rsvp-2022');
         this.setState({ showSuccessMessage: true });
         event.preventDefault();
     };

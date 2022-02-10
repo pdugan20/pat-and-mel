@@ -8,7 +8,7 @@ class HeroImage extends React.PureComponent {
         return (
             <LakeImage
                 src='/images/hero.png'
-                alt='Pat & Melanie in Aurora, NY'
+                alt='Pat & Melanie in Seattle, WA'
             />
         );
     }

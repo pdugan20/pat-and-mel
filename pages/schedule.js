@@ -19,52 +19,54 @@ class SchedulePage extends React.PureComponent {
         <StyledDescription>
             <PrimaryHeading>Schedule</PrimaryHeading>
             <span>
-                The wedding ceremony and reception will take place at the{' '}
+                The wedding ceremony and reception will take place at the Dugan
+                Farm (also know as the Aurora White House) at{' '}
                 <a
                     target='_blank'
                     rel='noopener noreferrer'
-                    href='https://innsofaurora.com/'
+                    href='https://goo.gl/maps/MSetDYP1CFGw41hU9'
                 >
-                    Aurora Inn
+                    1600 Sherwood Rd, Aurora, NY 13026
                 </a>{' '}
-                on the evening of Saturday, June 12th, 2021. There will be a
-                breakfast at a yet to be determined location the morning of
-                Sunday, June 13th.
+                on the evening of Saturday, June 4, 2022.
+                <br />
+                <br />
+                We ask that guests ride a shuttle from one of three pick-up
+                locations rather than park directly at the farm. We will provide
+                a list of locations closer to the ceremony.
             </span>
-            <DateTitle>Saturday, June 12</DateTitle>
+            <DateTitle>Saturday, June 4</DateTitle>
             <EventDescription>
-                5:00pm - Wedding Ceremony, The Aurora Inn,{' '}
+                4:00pm - 4:30pm - Shuttle service from Aurora, Auburn, &
+                Skaneateles
+            </EventDescription>
+            <EventDescription>
+                5:00pm - Renawal of Vows, The Farm,{' '}
                 <a
-                    href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
+                    href='https://goo.gl/maps/MSetDYP1CFGw41hU9'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
-                    391 Main St, Aurora, NY 13026
+                    1600 Sherwood Rd, Aurora, NY 13026
                 </a>
             </EventDescription>
             <EventDescription>
-                6:00pm - Reception, The Aurora Inn,{' '}
+                5:30pm - Cocktail hour, followed by reception, The Farm,{' '}
                 <a
-                    href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
+                    href='https://goo.gl/maps/MSetDYP1CFGw41hU9'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
-                    391 Main St, Aurora, NY 13026
+                    1600 Sherwood Rd, Aurora, NY 13026
                 </a>
             </EventDescription>
             <EventDescription>
-                11:00pm - Afterparty, The Fargo{' '}
-                <a
-                    href='https://goo.gl/maps/RgcMvb7MF1EMV5Rc9'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                >
-                    384 Main St, Aurora, NY 13026
-                </a>
+                10:00pm - 11:00pm - Shuttle service to Aurora, Auburn, &
+                Skaneateles
             </EventDescription>
-            <DateTitle>Sunday, June 13</DateTitle>
+            <DateTitle>Sunday, June 5</DateTitle>
             <EventDescription>
-                Breakfast, Time & location to be announced
+                Brunch, Time & location to be announced
             </EventDescription>
         </StyledDescription>
     );

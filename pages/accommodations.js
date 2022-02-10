@@ -19,37 +19,63 @@ class AccommodationPage extends React.PureComponent {
         <StyledDescription>
             <PrimaryHeading>Accommodations & Travel</PrimaryHeading>
             <span>
-                Reserved room blocks are available at the following locations in
-                Aurora and can be reserved by calling{' '}
-                <a href='tel:315-364-8888'>315-364-8888</a>.
+                A reserved room block is available in Auburn and can be reserved
+                by referencing the Gunderson Dugan wedding when calling{' '}
+                <a href='tel:315-252-7247'>315-252-7247</a>.
             </span>
             <HotelDescription>
-                The Aurora Inn
+                The Springside Inn
                 <br />
                 <a
-                    href='https://goo.gl/maps/xucn3TY2MDF9Ncyo7'
+                    href='https://goo.gl/maps/YYo7Xc8dwdu6B6MJA'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
-                    391 Main St, Aurora, NY 13026
-                </a>
-            </HotelDescription>
-            <HotelDescription>
-                Wallcourt Hall
-                <br />
-                <a
-                    href='https://goo.gl/maps/6A75ULxbj4D5Ypit6'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                >
-                    38 Lafayette St, Aurora, NY 13026
+                    6141 W Lake Rd, Auburn, NY 13021
                 </a>
             </HotelDescription>
             <AuroraMap />
             <span>
                 <br />
-                The airports nearest to Aurora are Ithaca (ITH) and Syracuse
-                (SYR).
+                Additional accomodation recommendations include:
+            </span>
+            <HotelDescription>
+                Hilton Garden Inn
+                <br />
+                <a
+                    href='https://goo.gl/maps/j6cAczQDMwp5ZXTW9'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    74 State St, Auburn, NY 13021
+                </a>
+            </HotelDescription>
+            <HotelDescription>
+                Packwood House
+                <br />
+                <a
+                    href='https://goo.gl/maps/EkXhCEWWSSW8FS9X9'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    14 W Genesee St, Skaneateles, NY 13152
+                </a>
+            </HotelDescription>
+            <HotelDescription>
+                Arbor House
+                <br />
+                <a
+                    href='https://goo.gl/maps/FRCMvcmy1fziujvN7'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    41 Fennell St, Skaneateles, NY 13152
+                </a>
+            </HotelDescription>
+            <span>
+                <br />
+                The airports nearest to Aurora are Ithaca (ITH), Syracuse (SYR),
+                and Rochester (ROC).
             </span>
         </StyledDescription>
     );

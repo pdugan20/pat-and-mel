@@ -24,8 +24,6 @@ class RsvpPage extends React.Component {
             attendance: '',
             name: '',
             guestName: '',
-            meal: '',
-            guestMeal: '',
             dietaryRestriction: '',
             song: '',
             note: '',
@@ -107,47 +105,6 @@ class RsvpPage extends React.Component {
         );
     };
 
-    renderMealOptions = () => (
-        <>
-            <option value='salmon'>Seared salmon</option>
-            <option value='chicken'>Honey roasted garlic chicken</option>
-            <option value='beef'>Beef tenderloin & gulf shrimp</option>
-            <option value='vegetarian'>Vegetarian</option>
-        </>
-    );
-
-    renderMealDropdown = () => (
-        <StyledDropdown
-            name='meal'
-            defaultValue='default'
-            onChange={this.handleChange}
-        >
-            <option value='default' disabled>
-                What meal would you like?
-            </option>
-            {this.renderMealOptions()}
-        </StyledDropdown>
-    );
-
-    renderGuestMealDropdown = () => {
-        const { showGuestFields } = this.state;
-
-        return (
-            showGuestFields && (
-                <StyledDropdown
-                    name='guestMeal'
-                    defaultValue='default'
-                    onChange={this.handleChange}
-                >
-                    <option value='default' disabled>
-                        What meal would your guest like?
-                    </option>
-                    {this.renderMealOptions()}
-                </StyledDropdown>
-            )
-        );
-    };
-
     renderSongField = () => {
         const { song } = this.state;
 
@@ -226,8 +183,6 @@ class RsvpPage extends React.Component {
             name,
             attendance,
             guestName,
-            meal,
-            guestMeal,
             dietaryRestriction,
             song,
             note,
@@ -237,7 +192,6 @@ class RsvpPage extends React.Component {
         const formData = {
             name,
             attendance,
-            meal,
             dietaryRestriction,
             song,
             note,
@@ -245,10 +199,9 @@ class RsvpPage extends React.Component {
 
         if (showGuestFields) {
             formData.guestName = guestName;
-            formData.guestMeal = guestMeal;
         }
 
-        writeRsvpData(formData, 'rsvp-2021');
+        writeRsvpData(formData, 'rsvp-2022');
         this.setState({ showSuccessMessage: true });
         event.preventDefault();
     };
@@ -258,9 +211,7 @@ class RsvpPage extends React.Component {
             {this.renderNameField()}
             {this.renderAttendanceDropdown()}
             {this.renderGuestDropdown()}
-            {this.renderMealDropdown()}
             {this.renderGuestNameField()}
-            {this.renderGuestMealDropdown()}
             {this.renderDietaryRestrictionField()}
             {this.renderSongField()}
             {this.renderNoteField()}

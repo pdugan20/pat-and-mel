@@ -22,7 +22,7 @@ const defaultProps = {
         mapTypeControl: false,
         streetViewControl: false,
     },
-    zoom: 17,
+    zoom: 14,
 };
 
 class AuroraMap extends React.PureComponent {
@@ -39,8 +39,8 @@ class AuroraMap extends React.PureComponent {
 
     setCenter() {
         const center = {
-            lat: 42.7545,
-            lng: -76.70335,
+            lat: 42.8988431,
+            lng: -76.5511782,
         };
 
         this.setState({ center });

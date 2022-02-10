@@ -8,7 +8,7 @@ class ConfirmationImage extends React.PureComponent {
         return (
             <LakeImage
                 src='/images/hero-2.png'
-                alt='Pat & Melanie in tubing in Aurora, NY'
+                alt='Pat & Melanie looking dope in Seattle, WA'
             />
         );
     }
