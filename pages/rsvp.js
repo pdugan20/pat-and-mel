@@ -25,6 +25,8 @@ class RsvpPage extends React.Component {
             name: '',
             guestName: '',
             dietaryRestriction: '',
+            vaccinated: '',
+            shuttle: '',
             song: '',
             note: '',
         };
@@ -105,6 +107,36 @@ class RsvpPage extends React.Component {
         );
     };
 
+    renderVaccinationDropdown = () => (
+        <StyledDropdown
+            name='vaccinated'
+            defaultValue='default'
+            onChange={this.handleChange}
+        >
+            <option value='default' disabled>
+                Are you and your guest vaccinated?
+            </option>
+            <option value='boosted'>Vaccinated and boosted</option>
+            <option value='vaccinated'>Vaccinated and will be boosted</option>
+            <option value='no'>My guest or I are not vaccinated</option>
+        </StyledDropdown>
+    );
+
+    renderShuttleDropdown = () => (
+        <StyledDropdown
+            name='shuttle'
+            defaultValue='default'
+            onChange={this.handleChange}
+        >
+            <option value='default' disabled>
+                Which shuttle location do you prefer?
+            </option>
+            <option value='aurora'>Aurora</option>
+            <option value='auburn'>Auburn</option>
+            <option value='skaneateles'>Skaneateles</option>
+        </StyledDropdown>
+    );
+
     renderSongField = () => {
         const { song } = this.state;
 
@@ -183,6 +215,8 @@ class RsvpPage extends React.Component {
             name,
             attendance,
             guestName,
+            vaccinated,
+            shuttle,
             dietaryRestriction,
             song,
             note,
@@ -192,6 +226,8 @@ class RsvpPage extends React.Component {
         const formData = {
             name,
             attendance,
+            vaccinated,
+            shuttle,
             dietaryRestriction,
             song,
             note,
@@ -213,6 +249,8 @@ class RsvpPage extends React.Component {
             {this.renderGuestDropdown()}
             {this.renderGuestNameField()}
             {this.renderDietaryRestrictionField()}
+            {this.renderVaccinationDropdown()}
+            {this.renderShuttleDropdown()}
             {this.renderSongField()}
             {this.renderNoteField()}
             {this.renderSubmitButton()}
