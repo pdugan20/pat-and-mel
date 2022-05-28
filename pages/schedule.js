@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import Page from '../layouts/main';
 import { RootView, StyledDescription } from '../styles/page';
 import { PrimaryHeading } from '../styles/headings';
@@ -32,9 +33,11 @@ class SchedulePage extends React.PureComponent {
                 <br />
                 <br />
                 We ask that guests ride a shuttle from one of three pick-up
-                locations rather than park directly at the farm. We will provide
-                a list of locations closer to the ceremony.
+                locations rather than park directly at the farm. Please refer to
+                the <Link href='/shuttles'>shuttle schedule</Link> for pickup
+                and departure times.
             </span>
+
             <DateTitle>Saturday, June 4</DateTitle>
             <EventDescription>
                 4:00pm - 4:30pm - Shuttle service from Aurora, Auburn, &
